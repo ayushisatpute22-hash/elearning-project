@@ -1,0 +1,122 @@
+<!DOCTYPE html>  <html lang="en">   
+<head>   
+  <meta charset="UTF-8"/>   
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>   
+  <title>CodeLearn E-Learning</title>   
+  <link rel="stylesheet" href="css/style.css">   
+</head>   
+<body>    <nav>   
+    <h1>CodeLearn</h1>   
+    <ul>   
+      <li><a href="#home">Home</a></li>   
+      <li><a href="#courses">Courses Offered</a></li>   
+      <!-- Add this inside the <nav> after the <ul> -->   
+<button onclick="toggleLogin()" style="background:#ffffff;color:#0047ab;padding:8px 
+16px;border:none;border-radius:4px;cursor:pointer;font-weight:bold;">Login</button>  <!-- 
+Add this just before </body> -->  <div id="loginModal" style="display:none; position:fixed; 
+top:0; left:0; width:100%; height:100%; background-color:rgba(0,51,102,0.6); z-index:999; 
+justify-content:center; align-items:center;">   
+  <div style="background:#ffffff; padding:30px; border-radius:8px; width:90%; 
+max-width:400px; box-shadow:0 0 10px #0047ab;">   
+    <h2 style="color:#0047ab; margin-bottom:20px; text-align:center;">User Login</h2>   
+    <form onsubmit="return loginUser()">   
+      <label style="color:#003366;">Username:</label>   
+      <input type="text" id="username" required style="width:100%; padding:10px; margin:8px 
+0; border:1px solid #0047ab; border-radius:4px;" />   
+      <label style="color:#003366;">Password:</label>   
+      <input type="password" id="password" required style="width:100%; padding:10px; 
+margin:8px 0 16px 0; border:1px solid #0047ab; border-radius:4px;" />   
+      <button type="submit" style="background:#0047ab; color:#ffffff; padding:10px 16px; 
+border:none; border-radius:4px; width:100%;">Login</button>   
+      <button type="button" onclick="toggleLogin()" style="margin-top:10px; background:white; 
+color:#0047ab; border:1px solid #0047ab; width:100%; padding:10px; 
+border-radius:4px;">Cancel</button>   
+    </form>   
+  </div>   
+  </div>
+    </ul>
+    <div id="pageTimer" style="position:fixed; top:90px; left:20px; background:#0047ab; 
+color:#fff; padding:8px 12px; border-radius:8px; font-family:sans-serif; z-index:1000;"> 
+  
+⏱
+ Time on Page: <span id="timer">00:00:00</span> 
+</div> 
+ 
+  </nav>    
+ 
+<section class="welcome" id="home">   
+    <h2>Welcome to  </ul> 
+<div id="pageTiCodeLearn!</h2>   
+    <p>Your one-stop free platform to learn programming languages</p>   
+    <div class="dynamic-text" id="funnyText">Learning C isn't that hard... until pointers say 
+hello!</div>   
+  </section>    <section class="section" id="courses">   
+    
+    <h2 style="text-align:center;"> 
+  Courses Offered 
+  <span class="eyes-container"> 
+    <span class="eye"></span> 
+    <span class="eye"></span> 
+  </span> 
+</h2> 
+    <div class="courses">   
+      <button class="course-btn" onclick="showCourse('c')">C Language</button> 
+      <button class="course-btn" onclick="showCourse('cpp')">C++ Language</button>   
+      <button class="course-btn" onclick="showCourse('java')">Java</button>   
+      <button class="course-btn" onclick="showCourse('python')">Python</button>   
+    </div>  <div id="c" class="course-content">   
+  <h3>C Language</h3>   
+  <p><strong>YouTube Course:</strong> <a 
+href="https://youtu.be/irqbmMNs2Bo?si=JrLNAWRPRM_gUrwY" target="_blank">Watch 
+Here</a></p>   
+  <p><strong>Notes:</strong> <a href="#">Download PDF</a></p>   
+  <p><strong>Quiz:</strong> <a href="#">Start Quiz</a></p>   
+</div>   
+</br> 
+<div id="cpp" class="course-content">   
+  <h3>C++ Language</h3>   
+  <p><strong>YouTube Course:</strong> <a 
+href="https://youtube.com/playlist?list=PLu0W_9lII9agpFUAlPFe_VNSlXW5uE0YL&si=g6Ib
+ PoUx_eQ8jXhg" target="_blank">Watch Here</a></p>   
+  <p><strong>Notes:</strong> <a href="#">Download PDF</a></p>   
+  <p><strong>Quiz:</strong> <a href="#">Start Quiz</a></p>   
+</div>   
+ 
+<div id="java" class="course-content">   
+  <h3>Java</h3>   
+  <p><strong>YouTube Course:</strong> <a 
+href="https://youtube.com/playlist?list=PLu0W_9lII9agS67Uits0UnJyrYiXhDS6q&si=Wy-XVI
+ PHROCfHa6m" target="_blank">Watch Here</a></p>   
+  <p><strong>Notes:</strong> <a href="#">Download PDF</a></p>   
+  <p><strong>Quiz:</strong> <a href="#">Start Quiz</a></p>   
+</div>   
+ 
+<div id="python" class="course-content">   
+  <h3>Python</h3>   
+  <p><strong>YouTube Course:</strong> <a 
+href="https://youtu.be/UrsmFxEIp5k?si=svOvi5XEwTeYdpNG" target="_blank">Watch 
+Here</a></p>   
+  <p><strong>Notes:</strong> <a href="#">Download PDF</a></p>   
+  <p><strong>Quiz:</strong> <a href="#">Start Quiz</a></p>   
+</div> 
+ 
+  </section>    <section class="about" id="about">   
+    <h2>About Us</h2>   
+    <p>CodeLearn is a student-friendly e-learning site focused on programming. We bring 
+you the best free YouTube courses, concise notes, and fun quizzes — so you can become a 
+coding wizard without spending a rupee!</p>   
+  </section>   
+  <div id="userBox" style="display:none; position:fixed; top:70px; right:20px; 
+background:#0047ab; color:#ffffff; padding:12px 16px; border-radius:8px; box-shadow:0 2px 
+6px rgba(0,0,102,0.3); z-index:999;">   
+  <div style="margin-bottom:5px;" id="greeting">Hello, User 
+�
+�
+ </div>   
+ 
+  <button onclick="logoutUser()" style="background:white; color:#0047ab; border:none; 
+padding:4px 8px; border-radius:4px; font-weight:bold; cursor:pointer;">Logout</button>   
+</div> 
+<script src="js/script.js"></script>
+</body>   
+</html>    
